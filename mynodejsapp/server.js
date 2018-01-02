@@ -12,7 +12,9 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '80');
+var port = normalizePort(process.env.PORT || '8800');
+console.log("The process started by this nodejs program is:"+process.pid);
+console.log("Port chosen has been:" + port);
 app.set('port', port);
 
 /**
@@ -28,6 +30,20 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+
+
+
+var res=app.get.res;
+var req=app.get.req;
+
+// app.get("/",function(req,res)
+// {
+//   res.type("html");
+//   res.redirect("301","/views/Index.htm");
+// }
+
+// );
+
 
 /**
  * Normalize a port into a number, string, or false.
